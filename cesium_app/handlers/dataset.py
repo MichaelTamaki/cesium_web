@@ -25,7 +25,7 @@ class DatasetHandler(BaseHandler):
         return d
 
     def post(self):
-        if self.get_argument('create_example'):
+        if self.get_argument('create_example') == 'true':
             project_id = self.get_argument('projectID')
             p = Project.get(Project.id == project_id)
             with create_test_dataset(p, delete_after=False) as d:

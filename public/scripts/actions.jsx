@@ -175,6 +175,7 @@ export function deleteProject(id) {
 
 export function uploadDataset(form) {
   const formData = new FormData();
+  formData.append('create_example', false);
 
   for (const key in form) {
     if (form[key] && objectType(form[key][0]) === 'File') {
